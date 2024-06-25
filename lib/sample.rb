@@ -16,4 +16,10 @@ class Sample
   def is_clousure?(num)
     num >= @low_bound && num <= @high_bound
   end
+
+  def is_same?(another_close_set)
+    raise ArgumentError if another_close_set.class != self.class
+
+    @low_bound == another_close_set.low_bound && @high_bound == another_close_set.high_bound
+  end
 end
