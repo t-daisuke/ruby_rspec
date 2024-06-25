@@ -63,4 +63,13 @@ describe Sample do
       end
     end
   end
+
+  describe '#get_str' do
+    describe 'get_strを読むと' do
+      it '文字列が返ってくる' do
+        close_set = Sample.new(low_bound: 1, high_bound: 2)
+        expect(close_set.get_str.to_a?).to eq 'String'
+      end
+    end
+  end
 end
