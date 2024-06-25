@@ -1,5 +1,6 @@
 describe OpenSet do
   describe '閉区間クラスができている' do
+    # これ冗長かな？
     close_set = OpenSet.new(low_bound: 1, high_bound: 2)
     describe 'low_boundが入っている' do
       it do
