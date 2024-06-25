@@ -1,4 +1,4 @@
-class Sample
+class CloseSet
   attr_reader :low_bound, :high_bound
 
   def initialize(low_bound:, high_bound:)
