@@ -8,4 +8,8 @@ class Sample
     @low_bound = low_bound
     @high_bound = high_bound
   end
+
+  def get_str
+    "[#{@low_bound},#{@high_bound}]"
+  end
 end
