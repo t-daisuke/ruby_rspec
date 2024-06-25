@@ -37,15 +37,23 @@ describe Sample do
   #   end
   # end
   describe '構造体ができている' do
-    let!(:close_set) { Sample.new(1, 2) }
+    # let!(:close_set) { Sample.new(low_bound: 1, high_bound: 2) }
     describe 'low_boundが入っている' do
       it do
+        close_set = Sample.new(low_bound: 1, high_bound: 2)
         expect(close_set.low_bound).to eq 1
       end
     end
     describe 'high_boundが入っている' do
       it do
+        close_set = Sample.new(low_bound: 1, high_bound: 2)
         expect(close_set.high_bound).to eq 2
+      end
+    end
+
+    describe 'low_bound>high_boundの時' do
+      it 'エラーが出る' do
+        expect { Sample.new(low_bound: 2, high_bound: 1) }.to raise_error(ArgumentError)
       end
     end
   end
