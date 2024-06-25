@@ -11,14 +11,19 @@ describe CloseSet do
   #   end
   # end
   describe '閉区間クラスができている' do
-    close_set = CloseSet.new(low_bound: 1, high_bound: 2)
+    # 2つのテストの間に依存関係が生まれてしまっている。
+    # letを消すのはいいが、それによってtestに依存関係が生まれてしまう。
+    # letが信用できないならbefore eachでやるのがいいかもしれない。←習った！
+
     describe 'low_boundが入っている' do
       it do
+        close_set = CloseSet.new(low_bound: 1, high_bound: 2)
         expect(close_set.low_bound).to eq 1
       end
     end
     describe 'high_boundが入っている' do
       it do
+        close_set = CloseSet.new(low_bound: 1, high_bound: 2)
         expect(close_set.high_bound).to eq 2
       end
     end

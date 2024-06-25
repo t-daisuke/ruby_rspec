@@ -1,4 +1,5 @@
 class CloseSet
+  # setってrubyにあるらしい。それの拡張クラスみたいになっちゃうので、名前を変えると嬉しいかも
   attr_reader :low_bound, :high_bound
 
   def initialize(low_bound:, high_bound:)
@@ -18,6 +19,8 @@ class CloseSet
   end
 
   def is_same?(another_close_set)
+    # falseを返すべきか、エラーを返すべきか悩む
+    # どう振る舞うべきかは仕様にすべきだし、テストに書くべき
     raise ArgumentError if another_close_set.class != self.class
 
     low_bound_is_same = @low_bound == another_close_set.low_bound
