@@ -51,7 +51,7 @@ describe CloseSet do
     close_set = CloseSet.new(low_bound: 1, high_bound: 5)
     describe '閉区間の範囲の場合' do
       it 'trueが返る' do
-        expect(close_set.is_clousure?(3)).to eq true # 自明
+        expect(close_set.is_clousure?(3)).to eq true # 自明　冗長なテスト
         expect(close_set.is_clousure?(1)).to eq true # 下限
         expect(close_set.is_clousure?(5)).to eq true # 上限
       end
