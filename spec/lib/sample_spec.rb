@@ -36,7 +36,7 @@ describe Sample do
   #     expect(1).to eq 2
   #   end
   # end
-  describe '構造体ができている' do
+  describe '(lower_bound; 1, hish_bound: 2)構造体ができている' do
     # let!(:close_set) { Sample.new(low_bound: 1, high_bound: 2) }
     describe 'low_boundが入っている' do
       it do
@@ -48,6 +48,12 @@ describe Sample do
       it do
         close_set = Sample.new(low_bound: 1, high_bound: 2)
         expect(close_set.high_bound).to eq 2
+      end
+    end
+
+    describe '数字以外が入ると' do
+      it 'エラーが出る' do
+        expect { Sample.new(low_bound: 'hoge', high_bound: 'huga') }.to raise_error(ArgumentError)
       end
     end
 
