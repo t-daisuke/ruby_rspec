@@ -66,9 +66,9 @@ describe Sample do
 
   describe '#get_str' do
     describe 'get_strを読むと' do
+      close_set = Sample.new(low_bound: 1, high_bound: 2)
+      close_set2 = Sample.new(low_bound: 2, high_bound: 3)
       it '閉区間に応じた文字列が返ってくる' do
-        close_set = Sample.new(low_bound: 1, high_bound: 2)
-        close_set2 = Sample.new(low_bound: 2, high_bound: 3)
         expect(close_set.get_str).to eq '[1,2]'
         expect(close_set2.get_str).to eq '[2,3]'
       end
