@@ -95,8 +95,7 @@ describe Sample do
 
   describe '#is_same?' do
     close_set = Sample.new(low_bound: 1, high_bound: 5)
-    close_set_same = Sample.new(low_bound: 1, high_bound: 5)
-    close_set_diff = Sample.new(low_bound: 1, high_bound: 6)
+
     describe '関係ないものを入れた場合' do
       it 'エラーが出る' do
         expect { close_set.is_same?('hoge') }.to raise_error(ArgumentError)
@@ -104,11 +103,13 @@ describe Sample do
     end
 
     describe '同じ集合の場合' do
+      close_set_same = Sample.new(low_bound: 1, high_bound: 5)
       it 'trueが返る' do
         expect(close_set.is_same?(close_set_same)).to eq true
       end
     end
     describe '違う集合の場合' do
+      close_set_diff = Sample.new(low_bound: 1, high_bound: 6)
       it 'falseが返る' do
         expect(close_set.is_same?(close_set_diff)).to eq false
       end
