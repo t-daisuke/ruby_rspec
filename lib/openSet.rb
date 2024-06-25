@@ -1,0 +1,2 @@
+class OpenSet
+end
