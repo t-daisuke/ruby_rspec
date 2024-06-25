@@ -1,2 +1,2 @@
-class OpenSet
+class OpenSet < CloseSet
 end
