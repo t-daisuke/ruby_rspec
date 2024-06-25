@@ -10,7 +10,7 @@ describe CloseSet do
   #     expect(1).to eq 2
   #   end
   # end
-  describe '(lower_bound; 1, hish_bound: 2)構造体ができている' do
+  describe '閉区間クラスができている' do
     close_set = CloseSet.new(low_bound: 1, high_bound: 2)
     describe 'low_boundが入っている' do
       it do
@@ -37,7 +37,7 @@ describe CloseSet do
   end
 
   describe '#get_close_set_str' do
-    describe 'get_close_set_strを読むと' do
+    describe 'get_close_set_strを呼ぶと' do
       close_set = CloseSet.new(low_bound: 1, high_bound: 2)
       close_set2 = CloseSet.new(low_bound: 2, high_bound: 3)
       it '閉区間に応じた文字列が返ってくる' do
@@ -49,7 +49,7 @@ describe CloseSet do
 
   describe '#includes_num?' do
     close_set = CloseSet.new(low_bound: 1, high_bound: 5)
-    describe '閉区間の範囲の場合' do
+    describe '数値が閉区間の範囲の場合' do
       it 'trueが返る' do
         # expect(close_set.includes_num?(3)).to eq true # 自明　冗長なテスト
         expect(close_set.includes_num?(1)).to eq true # 下限
@@ -57,7 +57,7 @@ describe CloseSet do
       end
     end
 
-    describe '閉区間の範囲外の場合' do
+    describe '数値が閉区間の範囲外の場合' do
       it 'falseが返る' do
         expect(close_set.includes_num?(0)).to eq false # 下限より小さい
         expect(close_set.includes_num?(6)).to eq false # 上限より大きい
