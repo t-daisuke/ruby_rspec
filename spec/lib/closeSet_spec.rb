@@ -47,20 +47,20 @@ describe CloseSet do
     end
   end
 
-  describe '#is_clousure?' do
+  describe '#includes_num?' do
     close_set = CloseSet.new(low_bound: 1, high_bound: 5)
     describe '閉区間の範囲の場合' do
       it 'trueが返る' do
-        # expect(close_set.is_clousure?(3)).to eq true # 自明　冗長なテスト
-        expect(close_set.is_clousure?(1)).to eq true # 下限
-        expect(close_set.is_clousure?(5)).to eq true # 上限
+        # expect(close_set.includes_num?(3)).to eq true # 自明　冗長なテスト
+        expect(close_set.includes_num?(1)).to eq true # 下限
+        expect(close_set.includes_num?(5)).to eq true # 上限
       end
     end
 
     describe '閉区間の範囲外の場合' do
       it 'falseが返る' do
-        expect(close_set.is_clousure?(0)).to eq false # 下限より小さい
-        expect(close_set.is_clousure?(6)).to eq false # 上限より大きい
+        expect(close_set.includes_num?(0)).to eq false # 下限より小さい
+        expect(close_set.includes_num?(6)).to eq false # 上限より大きい
       end
     end
   end
