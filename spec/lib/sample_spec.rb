@@ -118,10 +118,6 @@ describe Sample do
   describe '#is_proper_subset?' do
     # 変数の宣言箇所が認知負荷高いのでリファクタリングをしたい
     close_set = Sample.new(low_bound: 1, high_bound: 5)
-    close_set_not_proper = Sample.new(low_bound: 1, high_bound: 6)
-    close_set_not_proper2 = Sample.new(low_bound: 0, high_bound: 5)
-    close_set_proper = Sample.new(low_bound: 2, high_bound: 4)
-    close_set_samme = Sample.new(low_bound: 1, high_bound: 5)
 
     describe '関係ないものを入れた場合' do
       it 'エラーが出る' do
@@ -130,18 +126,22 @@ describe Sample do
     end
 
     describe '真部分集合の場合' do
+      close_set_proper = Sample.new(low_bound: 2, high_bound: 4)
       it 'trueが返る' do
         expect(close_set.is_proper_subset?(close_set_proper)).to eq true
       end
     end
 
     describe '一致する場合' do
+      close_set_samme = Sample.new(low_bound: 1, high_bound: 5)
       it 'trueが返る' do
         expect(close_set.is_proper_subset?(close_set_samme)).to eq true
       end
     end
 
     describe '真部分集合でない場合' do
+      close_set_not_proper = Sample.new(low_bound: 1, high_bound: 6)
+      close_set_not_proper2 = Sample.new(low_bound: 0, high_bound: 5)
       it 'falseが返る' do
         expect(close_set.is_proper_subset?(close_set_not_proper)).to eq false
         expect(close_set.is_proper_subset?(close_set_not_proper2)).to eq false
