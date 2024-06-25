@@ -25,4 +25,15 @@ describe OpenSet do
       end
     end
   end
+
+  describe '#get_open_set_str' do
+    describe 'get_open_set_strを呼ぶと' do
+      open_set = OpenSet.new(low_bound: 1, high_bound: 2)
+      open_set2 = OpenSet.new(low_bound: 2, high_bound: 3)
+      it '閉区間に応じた文字列が返ってくる' do
+        expect(open_set.get_open_set_str).to eq '(1,2)'
+        expect(open_set2.get_open_set_str).to eq '(2,3)'
+      end
+    end
+  end
 end
