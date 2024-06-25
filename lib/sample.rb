@@ -1,7 +1,8 @@
 class Sample
-  # def say(greeting)
-  #   "#{greeting} TDD BootCamp!"
-  # end
-  close_set = Struct.new(:tmp1, :tmp2) do
+  attr_reader :low_bound, :high_bound
+
+  def initialize(low_bound, high_bound)
+    @low_bound = low_bound
+    @high_bound = high_bound
   end
 end
