@@ -9,7 +9,7 @@ class CloseSet
     @high_bound = high_bound
   end
 
-  def get_str
+  def get_close_set_str
     "[#{@low_bound},#{@high_bound}]"
   end
 
