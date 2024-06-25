@@ -1,5 +1,5 @@
 class Sample
-  def say(greeting)
-    "#{greeting} TDD BootCamp!"
-  end
+  # def say(greeting)
+  #   "#{greeting} TDD BootCamp!"
+  # end
 end
