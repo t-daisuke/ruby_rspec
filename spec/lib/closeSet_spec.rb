@@ -1,9 +1,9 @@
 describe CloseSet do
-  describe 'いいはず' do
-    it do
-      expect(1).to eq 1
-    end
-  end
+  # describe 'いいはず' do
+  #   it do
+  #     expect(1).to eq 1
+  #   end
+  # end
   # ダメだった！(嬉しい)
   # describe 'ダメなはず' do
   #   it do
