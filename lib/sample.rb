@@ -12,4 +12,8 @@ class Sample
   def get_str
     "[#{@low_bound},#{@high_bound}]"
   end
+
+  def is_clousure?(num)
+    num >= @low_bound && num <= @high_bound
+  end
 end
